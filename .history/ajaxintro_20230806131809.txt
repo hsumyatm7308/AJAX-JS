@@ -1,0 +1,6 @@
+=>AJAX  (Asynchronous Javascript And XML)
+  
+  - not a programming language 
+  - a technique for accessing web server from web page 
+  - allows the client to send data and receive data in an asynchronous manner 
+  - can be used with any type of script, including Javascript

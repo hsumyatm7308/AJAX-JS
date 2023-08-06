@@ -1,0 +1,7 @@
+=>XMLHTTPRequest Object  (Key of AJAX)
+
+  - Create an XMLHTTPRequest Object
+  - Define a callback function 
+  - Open the XMLHTTPRequest Object
+  -
+

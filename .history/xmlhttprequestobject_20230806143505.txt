@@ -1,0 +1,2 @@
+=>XMLHTTPRequest Object  (Key of AJAX)
+
