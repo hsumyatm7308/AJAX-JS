@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>AJAX</title>
 </head>
+
 <body>
     <div id="ctn">
         <h1>loading...</h1>
@@ -13,14 +15,19 @@
         var ctn = document.getElementById('ctn');
         var ajaxtext = document.getElementById('ajax-text');
 
-        ajaxtext.addEventListener('click', function() {
+        ajaxtext.addEventListener('click', function () {
             const newobj = new XMLHttpRequest();
-            newobj.onload = function() {
-                ctn.innerHTML = this.responseText; 
-            };
-            newobj.open('GET', 'accept.html');
-            newobj.send();
-        });
+            console.log(newobj);
+            newobj.onload = function () {
+                ctn.innerHTML = this.responseText;
+            }
+
+        })
+
+        newobj.open('GET', 'ajaxintro.txt');
+        newobj.send();
+
     </script>
 </body>
+
 </html>

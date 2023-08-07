@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Abort Method</title>
+</head>
+
+<body>
+    <div id="result"></div>
+    <div id="start" onclick="start()">start</div>
+    <div id="abort" onclick="abort()">abort</div>
+
+    <script type="text/javascript">
+        var xhr = new XMLHttpRequest();
+
+        function start() {
+            $request = "Hey this is request start";
+            xhr.onload = function () {
+                document.getElementById("result").innerHTML += "<br>" + $request;
+            }
+
+            xhr.onerror = function () {
+                resultDiv.textContent = 'AJAX request encountered an error.';
+            };
+
+
+            xhr.open('GET', 'welcome.txt');
+            xhr.send();
+        }
+
+        function abort() {
+            if (xhr) {
+                $abort = "This is stop abort";
+
+                xhr.abort();
+                document.getElementById("result").innerHTML += "<br>" + $abort;
+
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Onload Propertie</title>
+</head>
+
+<body>
+
+    <!-- request ka answer ya tar nae  ta khar tal reponse pyan pay tae function ko define pay tal  -->
+    <div id="ctn">
+        <h1>loading...</h1>
+        <button id="ajax-text" class="">Change text</button>
+    </div>
+
+    <div id="result"></div>
+    <div id="start" onclick="load('../abortmethod/index.html',myfun1)">Load1</div>
+    <div id="abort" onclick="load('../ajaxintro.txt',myfun2)">Load2</div>
+
+
+    <script type="text/javascript">
+        var ctn = document.getElementById('ctn');
+        var ajaxtext = document.getElementById('ajax-text');
+
+        // single callback function 
+        // ajaxtext.addEventListener('click', function () {
+        //     const newobj = new XMLHttpRequest();
+
+        //     newobj.onload = function () {
+        //         ctn.innerHTML = this.responseText;
+        //     };
+
+        //     newobj.open('GET', '../accept.html');
+        //     newobj.send();
+        // });
+
+        // Multi Callback function 
+        function load(url, funs) {
+            console.log(url);
+            let xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                funs(this);
+            }
+            xhr.open('GET',url);
+            xhr.send();
+        }
+
+        myfun1 = function (xhr) {
+            console.log('hi I\'m my fun1');
+            document.getElementById('result').innerHTML = "Hi I\'m fun1";
+        }
+
+        myfun2 = function (xhr) {
+            console.log('hi I\'m my fun2');
+            document.getElementById('result').innerHTML = "Hi I\'m fun1";
+
+
+        }
+
+    </script>
+</body>
+
+</html>

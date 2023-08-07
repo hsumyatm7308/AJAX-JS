@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Onload Propertie</title>
+    </head>
+    <body>
+        
+        <!-- request ka answer ya tar nae  ta khar tal reponse pyan pay tae function ko define pay tal  -->
+        <div id="ctn">
+            <h1>loading...</h1>
+            <button id="ajax-text" class="">Change text</button>
+        </div>
+    
+        <script type="text/javascript">
+            var ctn = document.getElementById('ctn');
+            var ajaxtext = document.getElementById('ajax-text');
+    
+            ajaxtext.addEventListener('click', function() {
+                const newobj = new XMLHttpRequest();
+                newobj.onload = function() {
+                    ctn.innerHTML = this.responseText; 
+                };
+                newobj.open('GET', '../accept.html');
+                newobj.send();
+            });
+
+
+            // Multi Callback function 
+        </script>
+    </body>
+</html>
+
+

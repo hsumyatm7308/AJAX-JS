@@ -13,9 +13,3 @@
    2. Define a callback function 
       syntax =>   xhtml.onload = function(){ ##code to be executed }
 
-   3. Open the XMLHTTPRequest
-      syntax =>  xhtml.open('method','open file')
-    
-   4. Send request 
-      syntax => xhtml.send();
-

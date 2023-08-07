@@ -16,9 +16,9 @@
         ajaxtext.addEventListener('click', function() {
             const newobj = new XMLHttpRequest();
             newobj.onload = function() {
-                ctn.innerHTML = this.responseText; 
+                ctn.innerHTML = this.responseText; // Corrected typo here
             };
-            newobj.open('GET', 'accept.html');
+            newobj.open('GET', 'ajaxintro.txt');
             newobj.send();
         });
     </script>
