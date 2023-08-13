@@ -22,44 +22,40 @@
         var ctn = document.getElementById('ctn');
         var ajaxtext = document.getElementById('ajax-text');
 
-        // single callback function 
+        single callback function 
         ajaxtext.addEventListener('click', function () {
             const newobj = new XMLHttpRequest();
 
             newobj.onload = function () {
-                ctn.innerHTML = this.status; //200
-                ctn.innerHTML = this.statusText; //OK or Not Found
-                ctn.innerHTML = this.responseText; // Returns the response data as a string
+                ctn.innerHTML = this.responseText;
             };
-
-          
 
             newobj.open('GET', '../accept.html');
             newobj.send();
         });
 
         // Multi Callback function 
-        // function load(url, funs) {
-        //     console.log(url);
-        //     let xhr = new XMLHttpRequest();
-        //     xhr.onload = function () {
-        //         funs(this);
-        //     }
-        //     xhr.open('GET',url);
-        //     xhr.send();
-        // }
+        function load(url, funs) {
+            console.log(url);
+            let xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                funs(this);
+            }
+            xhr.open('GET',url);
+            xhr.send();
+        }
 
-        // myfun1 = function (xhr) {
-        //     console.log('hi I\'m my fun1');
-        //     document.getElementById('result').innerHTML = "Hi I\'m fun1";
-        // }
+        myfun1 = function (xhr) {
+            console.log('hi I\'m my fun1');
+            document.getElementById('result').innerHTML = "Hi I\'m fun1";
+        }
 
-        // myfun2 = function (xhr) {
-        //     console.log('hi I\'m my fun2');
-        //     document.getElementById('result').innerHTML = "Hi I\'m fun2";
+        myfun2 = function (xhr) {
+            console.log('hi I\'m my fun2');
+            document.getElementById('result').innerHTML = "Hi I\'m fun2";
 
 
-        // }
+        }
 
     </script>
 </body>

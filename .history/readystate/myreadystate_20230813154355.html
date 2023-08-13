@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ready State</title>
+</head>
+
+<body>
+
+    <div id="ctn">
+        <h1>loading...</h1>
+        <button id="ajax-text" class="" onclick="click()">Change text</button>
+    </div>
+
+
+    <script type="text/javascript">
+
+        function click() {
+
+            const xhl = new XMLHttpRequest();
+
+            // The onreadystatechange function is called every time the readyState changes.
+            xhl.onreadystatechange = function () {
+                if (xhl === 0) {
+                    document.getElementById("ctn").innerHTML = "request not initialized";
+                }
+
+                if (xhl === 2) {
+                    document.getElementById("ctn").innerHTML = "server connection established";
+                }
+
+                if (xhl === 2) {
+                    document.getElementById("ctn").innerHTML = "request received";
+                }
+
+                if (xhl === 2) {
+                    document.getElementById("ctn").innerHTML = "processing request";
+                }
+
+                if (xhl === 2) {
+                    document.getElementById("ctn").innerHTML = "request finished and response is ready";
+                }
+
+
+            }
+
+            xhl.open('POST','openfile.html');
+            xhl.send();
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>

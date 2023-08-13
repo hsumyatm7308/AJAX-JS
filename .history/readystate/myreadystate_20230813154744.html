@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ready State</title>
+</head>
+
+<body>
+
+    <div id="ctn">
+        <h1>loading...</h1>
+        <button id="ajax-text" class="" onclick="click()">Change text</button>
+    </div>
+
+
+    <script type="text/javascript">
+
+        function click() {
+            const xhr = new XMLHttpRequest();
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 0) {
+                    document.getElementById("ctn").innerHTML = "request not initialized";
+                } else if (xhr.readyState === 1) {
+                    document.getElementById("ctn").innerHTML = "server connection established";
+                } else if (xhr.readyState === 2) {
+                    document.getElementById("ctn").innerHTML = "request received";
+                } else if (xhr.readyState === 3) {
+                    document.getElementById("ctn").innerHTML = "processing request";
+                } else if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("ctn").innerHTML = "request finished and response is ready";
+                    // You might want to do something with the response here
+                }
+            }
+
+            xhr.open('GET', 'openfile.html');
+            xhr.send();
+        }
+
+        
+
+
+    </script>
+</body>
+
+</html>

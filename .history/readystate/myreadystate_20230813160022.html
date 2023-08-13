@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ready State</title>
+</head>
+
+<body>
+
+    <div id="ctn">
+        <h1>loading...</h1>
+        <button id="ajax-text" class="" onclick="performRequest()">Change text</button>
+    </div>
+
+    <script type="text/javascript">
+        function performRequest() {
+            const xhr = new XMLHttpRequest();
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 2) {
+                    document.getElementById("ctn").innerHTML = this.responseText;
+                } else {
+                    document.getElementById("ctn").innerHTML = "Error: " + xhr.status;
+                }
+            }
+
+            xhr.open('GET', '../accept.html');
+            xhr.send();
+        }
+    </script>
+</body>
+
+</html>

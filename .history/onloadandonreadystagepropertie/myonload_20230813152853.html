@@ -27,9 +27,7 @@
             const newobj = new XMLHttpRequest();
 
             newobj.onload = function () {
-                ctn.innerHTML = this.status; //200
-                ctn.innerHTML = this.statusText; //OK or Not Found
-                ctn.innerHTML = this.responseText; // Returns the response data as a string
+                ctn.innerHTML = this.statusText;
             };
 
           
